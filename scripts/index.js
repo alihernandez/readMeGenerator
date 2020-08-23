@@ -15,7 +15,7 @@ function promptUser() {
     {
       type: "input",
       name: "questions",
-      message: "hello whats your github username?",
+      message: "whats your github username?",
     },
 
     {
@@ -66,16 +66,6 @@ function generateMarkdown(answers) {
   return `
 # **${answers.title}**
 
-${
-  answers.license === "MIT"
-    ? "[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)"
-    : answers.license === "IBM"
-    ? "[![License: IPL 1.0](https://img.shields.io/badge/License-IPL%201.0-blue.svg)](https://opensource.org/licenses/IPL-1.0)"
-    : "[![License: MPL 2.0](https://img.shields.io/badge/License-MPL%202.0-brightgreen.svg)](https://opensource.org/licenses/MPL-2.0)"
-} 
-
-## gitHub portfolio:
-https://github.com/${answers.questions}
 
 ## Description 
 ------------
@@ -102,14 +92,10 @@ ${answers.credits}
 
 ## License
 ------------
-   ${
-     answers.license === "MIT"
-       ? "[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)"
-       : answers.license === "IBM"
-       ? "[![License: IPL 1.0](https://img.shields.io/badge/License-IPL%201.0-blue.svg)](https://opensource.org/licenses/IPL-1.0)"
-       : "[![License: MPL 2.0](https://img.shields.io/badge/License-MPL%202.0-brightgreen.svg)](https://opensource.org/licenses/MPL-2.0)"
-   } 
+
+   ${answers.license === "MIT" ? "[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)" : answers.license === "IBM" ? "[![License: IPL 1.0](https://img.shields.io/badge/License-IPL%201.0-blue.svg)](https://opensource.org/licenses/IPL-1.0)" : "[![License: MPL 2.0](https://img.shields.io/badge/License-MPL%202.0-brightgreen.svg)](https://opensource.org/licenses/MPL-2.0)"} 
   
+
 ## Contributing
 ------------
 ${answers.contributing}
@@ -117,6 +103,22 @@ ${answers.contributing}
 ## Tests
 ------------
 ${answers.tests}
+
+## Questions
+------------
+## gitHub portfolio:
+https://github.com/${answers.questions}
+* "hello what's the title of the project?"
+* "whats your github username?"
+* "please enter a short description of your project"
+* "please enter command required to install the project:"
+* "please provied instructions and examples for use:"
+* "please select applicable licenses:"
+* "List your collaborators, if any."
+* "If you created an application or package and would like other developers to contribute it, you will want to add guidelines for how to do so."
+* "If you know how to run tests include them here:"
+
+
 `;
 }
 
