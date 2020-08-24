@@ -11,7 +11,7 @@ function promptUser() {
       name: "title",
       message: "hello what's the title of the project?",
     },
-
+    
     {
       type: "input",
       name: "questions",
@@ -56,8 +56,7 @@ function promptUser() {
     {
       type: "input",
       name: "tests",
-      message:
-        "If you know how to run tests include them here:",
+      message: "If you know how to run tests include them here:",
     },
   ]);
 }
@@ -65,6 +64,13 @@ function promptUser() {
 function generateMarkdown(answers) {
   return `
 # **${answers.title}**
+${
+  answers.license === "CCO"
+    ? "[![License: CC BY 4.0](https://licensebuttons.net/l/by/4.0/80x15.png)](https://creativecommons.org/licenses/by/4.0/)"
+    : answers.license === "TAL"
+    ? "[![License: Artistic-2.0](https://img.shields.io/badge/License-Artistic%202.0-0298c3.svg)](https://opensource.org/licenses/Artistic-2.0)"
+    : "[![License: MPL 2.0](https://img.shields.io/badge/License-MPL%202.0-brightgreen.svg)](https://opensource.org/licenses/MPL-2.0)"
+}
 
 
 ## Description 
@@ -93,7 +99,13 @@ ${answers.credits}
 ## License
 ------------
 
-   ${answers.license === "MIT" ? "[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)" : answers.license === "IBM" ? "[![License: IPL 1.0](https://img.shields.io/badge/License-IPL%201.0-blue.svg)](https://opensource.org/licenses/IPL-1.0)" : "[![License: MPL 2.0](https://img.shields.io/badge/License-MPL%202.0-brightgreen.svg)](https://opensource.org/licenses/MPL-2.0)"} 
+   ${
+     answers.license === "MIT"
+       ? "[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)"
+       : answers.license === "IBM"
+       ? "[![License: IPL 1.0](https://img.shields.io/badge/License-IPL%201.0-blue.svg)](https://opensource.org/licenses/IPL-1.0)"
+       : "[![License: MPL 2.0](https://img.shields.io/badge/License-MPL%202.0-brightgreen.svg)](https://opensource.org/licenses/MPL-2.0)"
+   } 
   
 
 ## Contributing
