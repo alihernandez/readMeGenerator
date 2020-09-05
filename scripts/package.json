@@ -1,0 +1,23 @@
+{
+  "name": "rmgenerator",
+  "version": "1.0.0",
+  "description": "app that generates profession readme",
+  "main": "index.js",
+  "scripts": {
+    "test": "node index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/alihernandez/readmeGenerator.git"
+  },
+  "keywords": [
+    "readme",
+    "markdown"
+  ],
+  "author": "Alí Herrnandez",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/alihernandez/readmeGenerator/issues"
+  },
+  "homepage": "https://github.com/alihernandez/readmeGenerator#readme"
+}

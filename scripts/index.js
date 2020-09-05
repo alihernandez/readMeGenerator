@@ -15,7 +15,13 @@ function promptUser() {
     {
       type: "input",
       name: "questions",
-      message: "whats your github username?",
+      message: "what's your github username?",
+    },
+
+    {
+      type: "input",
+      name: "email",
+      message: "what's your email address?",
     },
 
     {
@@ -72,6 +78,10 @@ ${
     : "[![License: MPL 2.0](https://img.shields.io/badge/License-MPL%202.0-brightgreen.svg)](https://opensource.org/licenses/MPL-2.0)"
 }
 
+## gitHub portfolio:
+https://github.com/${answers.questions}
+
+## Email: ${answers.email}
 
 ## Description 
 ------------
@@ -118,8 +128,6 @@ ${answers.tests}
 
 ## Questions
 ------------
-## gitHub portfolio:
-https://github.com/${answers.questions}
 * "hello what's the title of the project?"
 * "whats your github username?"
 * "please enter a short description of your project"
